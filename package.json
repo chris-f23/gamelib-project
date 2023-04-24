@@ -1,0 +1,14 @@
+{
+  "name": "gamelib-project",
+  "version": "0.1.0",
+  "description": "Librería para facilitar la programación de juegos 2D en JavaScript, inspirada fuertemente en Kaboom y Unity.",
+  "main": "app.js",
+  "scripts": {
+    "start": "vite ."
+  },
+  "author": "Christian Farías Águila",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^4.3.1"
+  }
+}
