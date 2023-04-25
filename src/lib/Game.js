@@ -19,9 +19,11 @@ export const Game = ({ canvas, height, width }) => {
   if (!(canvas instanceof HTMLCanvasElement)) {
     throw new Error("El elemento canvas no es valido.");
   }
-
+  canvas.style.height = `${height}px`;
+  canvas.style.width = `${width}px`;
   canvas.height = height;
   canvas.width = width;
+
   const context = canvas.getContext("2d");
 
   if (!(context instanceof CanvasRenderingContext2D)) {

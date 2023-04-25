@@ -3,8 +3,8 @@ import { Game } from "./src/lib/Game";
 import { Rect } from "./src/lib/Rect";
 import { Transform } from "./src/lib/Transform";
 
-const CANVAS_WIDTH = window.innerWidth;
-const CANVAS_HEIGHT = window.innerHeight;
+const CANVAS_WIDTH = 400;
+const CANVAS_HEIGHT = 300;
 
 const game = Game({
   canvas: document.getElementById("canvas"),
