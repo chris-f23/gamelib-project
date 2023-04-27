@@ -1,10 +1,16 @@
 // @ts-check
 import { Game } from "./src/lib/Game";
+import { KeyListener } from "./src/lib/KeyListener";
 import { Rect } from "./src/lib/Rect";
 import { Transform } from "./src/lib/Transform";
 
 const CANVAS_WIDTH = 400;
 const CANVAS_HEIGHT = 300;
+
+const inputs = KeyListener({
+  left: ["ArrowLeft", "KeyA"],
+  right: ["ArrowRight", "KeyD"],
+});
 
 const game = Game({
   canvas: document.getElementById("canvas"),
@@ -45,26 +51,6 @@ const paddle = Rect({
 
     paddle.transform.position.x += paddleDirection * paddleCurrentSpeed * delta;
   },
-});
-
-const inputs = {
-  left: false,
-  right: false,
-};
-addEventListener("keydown", ({ code }) => {
-  if (code === "ArrowLeft") {
-    inputs.left = true;
-  } else if (code === "ArrowRight") {
-    inputs.right = true;
-  }
-});
-
-addEventListener("keyup", ({ code }) => {
-  if (code === "ArrowLeft") {
-    inputs.left = false;
-  } else if (code === "ArrowRight") {
-    inputs.right = false;
-  }
 });
 
 let ballSpeed = 72;
