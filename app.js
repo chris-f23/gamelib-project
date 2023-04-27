@@ -1,4 +1,5 @@
 // @ts-check
+import { Circle } from "./src/lib/Circle";
 import { Game } from "./src/lib/Game";
 import { KeyListener } from "./src/lib/KeyListener";
 import { Rect } from "./src/lib/Rect";
@@ -54,14 +55,14 @@ const paddle = Rect({
 });
 
 let ballSpeed = 72;
-const ball = Rect({
-  width: 20,
-  height: 20,
+const ball = Circle({
+  radius: 12,
   color: "blue",
   transform: Transform(
     paddle.transform.position.x,
     paddle.transform.position.y - 10
   ),
+
   onUpdate: (delta) => {
     ball.transform.position.y -= ballSpeed * delta;
   },
